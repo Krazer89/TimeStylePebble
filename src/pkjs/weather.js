@@ -3,10 +3,11 @@
 var weatherProviders = {
   'owm'          : require('./weather_owm'),
   // 'forecast'     : require('weather_forecast'),
-  'wunderground' : require('./weather_wunderground')
+  'wunderground' : require('./weather_wunderground'),
+  'yr'          : require('./weather_yr')
 };
 
-var DEFAULT_WEATHER_PROVIDER = 'owm';
+var DEFAULT_WEATHER_PROVIDER = 'yr';
 
 // get new forecasts if 3 hours have elapsed
 var FORECAST_MAX_AGE = 3 * 60 * 60 * 1000;
