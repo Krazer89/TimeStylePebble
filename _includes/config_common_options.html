@@ -98,9 +98,13 @@
   <label class="subtle">Data Source</label>
   <div id="weather_datasource_setting" class="form-group" >
     <div class="btn-group btn-group-justified"  data-toggle="buttons" >
+      <label class="btn btn-default" data-setting="yr">
+        <img class="example_img" src="images/weather_provider_yr.png" width="56" height="56">
+        <input id="datasource_default" type="radio" name="options" autocomplete="off"> yr.no (Default)
+      </label>
       <label class="btn btn-default" data-setting="owm">
         <img class="example_img" src="images/weather_provider_owm.png" width="56" height="56">
-        <input id="datasource_default" type="radio" name="options" autocomplete="off"> OpenWeather (Default)
+        <input type="radio" name="options" autocomplete="off"> OpenWeather
       </label>
       <!-- <label class="btn btn-default" data-setting="forecast" style="vertical-align:top">
         <img class="example_img" src="images/weather_provider_forecast.png" width="56" height="56">

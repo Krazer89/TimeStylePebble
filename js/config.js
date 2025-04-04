@@ -32,7 +32,7 @@ function migrateLegacySettings(config) {
 
   // stick in the new defaults
   if(!config.weather_datasource) {
-    config.weather_datasource = 'owm';
+    config.weather_datasource = 'yr';
   }
 
   return config;
@@ -81,7 +81,7 @@ function loadPreviousSettings() {
       units: 'f',
       weather_loc: '',
       weather_setting: 'auto',
-      weather_datasource: 'owm',
+      weather_datasource: 'yr',
       weather_api_key: '',
 
       // battery widget settings
@@ -152,7 +152,7 @@ function loadPreviousSettings() {
   }
 
   // load weather data source
-  if(savedSettings.weather_datasource != 'owm') {
+  if(savedSettings.weather_datasource != 'owm' && savedSettings.weather_datasource != 'yr') {
     $('#weather_api_key_setting_area').collapse('show');
   } else {
     $('#weather_api_key_setting_area').collapse('hide');
@@ -687,11 +687,10 @@ $('#weather_setting input').on('change', function(){
   }
 });
 
-
 $('#weather_datasource_setting input').on('change', function(){
   $target = $('#weather_api_key_setting_area');
 
-  if (!$('#datasource_default').is(':checked')) {
+  if ($('#weather_datasource_setting .btn.active').data('setting') === 'wunderground') {
     $target.collapse('show');
   } else {
     $target.collapse('hide');
